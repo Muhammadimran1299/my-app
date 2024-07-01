@@ -17,7 +17,7 @@ jobs:
           run: echo "job1 file" > job1.txt
           
     job2:
-        name: my Name is Job2
+        name: My Name is Job2
         runs-on: ubuntu-latest
         steps:
           - name: Verfiy a File - Job 2
@@ -27,7 +27,7 @@ jobs:
             run : ls -l job2.txt
 
     job3:
-        name: my Name is Job3
+        name: My Name is Job3
         runs-on: ubuntu-latest
         needs: [job1, job2]
         steps:
