@@ -14,7 +14,7 @@ jobs:
           run: echo "First Step in Job 1"
 
         - name: Create a File
-          run: touc test.txt
+          run: touch test.txt
     job2:
         name: my Cast is Job2
         runs-on: ubauntu-latest
