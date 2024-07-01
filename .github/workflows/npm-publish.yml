@@ -7,7 +7,7 @@ on:
 
 jobs:
     job1:
-      name: my Name is Job1
+      name: My Name is Job1
       runs-on: ubuntu-latest
       steps:
         - name : First Step - JOb 1
@@ -15,8 +15,9 @@ jobs:
 
         - name: Create a File - JOb 1
           run: touch test.txt
+          
     job2:
-        name: my Cast is Job2
+        name: my Name is Job2
         runs-on: ubuntu-latest
         steps:
           - name: Verfiy the File - Job 2
