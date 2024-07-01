@@ -17,7 +17,7 @@ jobs:
           run: touch test.txt
     job2:
         name: my Cast is Job2
-        runs-on: ubauntu-latest
+        runs-on: ubuntu-latest
         steps:
           - name: Verfiy the File - Job 2
             run : ls - 1
