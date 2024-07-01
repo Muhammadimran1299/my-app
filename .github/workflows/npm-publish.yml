@@ -13,7 +13,7 @@ jobs:
         - name : First Step - JOb 1
           run: echo "First Step in Job 1"
 
-        - name: Create a File
+        - name: Create a File - JOb 1
           run: touch test.txt
     job2:
         name: my Cast is Job2
