@@ -32,4 +32,4 @@ jobs:
         needs: [job1, job2]
         steps:
           - name: Checked the files are created
-            run : ls - 1
+            run : ls -1
