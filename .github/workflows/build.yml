@@ -28,7 +28,7 @@ jobs:
         run : npm run build
 
       - name: Verfiy the Output Folder
-        run : ls -1 out
+        run : ls -l out
 
       - name: Upload Artifact 
         uses: actions/upload-artifact@v4
@@ -44,4 +44,4 @@ jobs:
           netlify deploy --prod \
             --dir=out   \
             --site ${{ secrets.NETLIFY_SITE_ID }} \
-            --AUTH ${{ secrest.NETLIFY_USER_TOKEN }}
+            --auth ${{ secrest.NETLIFY_USER_TOKEN }}
