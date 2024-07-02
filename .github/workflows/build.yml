@@ -1,0 +1,47 @@
+name: NextJS Build Export
+
+on:
+  push:
+    branches:
+      - master
+
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name : Setup Node.js
+        uses : actions/setup-node@v4.0.2
+        with:
+          node-version: '20'
+          # cashe: 'npm' 
+          # cashe-dependency-path: './node_modules'
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run : npm install
+
+      - name: Build
+        run : npm run build
+
+      - name: Verfiy the Output Folder
+        run : ls -1 out
+
+      - name: Upload Artifact 
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-app Build Package
+          path: out
+
+      - name: Install Netlify CLI
+        run : npm install -g netlify-cli
+
+      - name: Deploy to netlify
+        run: |
+          netlify deploy --prod \
+            --dir=out   \
+            --site ${{ secrets.NETLIFY_SITE_ID }} \
+            --AUTH ${{ secrest.NETLIFY_USER_TOKEN }}
